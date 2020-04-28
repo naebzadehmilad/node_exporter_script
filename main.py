@@ -1,10 +1,16 @@
 import os
 from  jinja2 import Template
 from config import *
+from termcolor import colored
+if os.path.exists('tmp'):
+    os.system('rm -rf tmp')
+if hosts == ['127.0.0.1', '127.0.0.2']:
+    print (colored('please change the default variable  hosts  in conf file','red'))
+    exit(1)
 if not os.path.exists('tmp'):
     os.mkdir('tmp')
 def node_exporter():
-    f = open('/tmp/node_exporter.service', "w")
+    f = open('tmp/node_exporter.service', "w+")
     template = Template("""
     [Unit]
     Description=Node Exporter
