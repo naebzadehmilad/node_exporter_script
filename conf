@@ -1,6 +1,9 @@
 [hosts]
-nodes = 127.0.0.1,127.0.0.2
+nodes = 172.16.120.3,172.16.120.4,172.16.120.10,172.16.120.11 
 
 [port]
 port = 9100
+
+[download]
+link = https://github.com/prometheus/node_exporter/releases/download/v0.18.1/node_exporter-0.18.1.linux-amd64.tar.gz
 
